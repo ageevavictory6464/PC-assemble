@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <title>ПК</title>
+    <script src="./js/main.js"></script>
 </head>
 
 <body>
@@ -30,6 +32,7 @@
             </div>
         </div>
     </header>
+
     <main class="main">
         <section class="main-display">
             <div class="container">
@@ -58,6 +61,39 @@
                 <img src="img/main-screen__bgc.png" alt="background">
             </div>
         </section>
+
+        <div class="course">
+            <div class="container">
+                <div class="course__wrap">
+                    <div class="course-button__wrap">
+                        <button class="button course__button">Заказать курс</button>
+                    </div>
+                    <div class="course__counter">
+                        <div class="course__counter-line">
+                            <span>Учеников всего:</span>
+                            <span class="course__number">200</span>
+                        </div>
+                        <div class="course__counter-line">
+                            <span>Успешно закончили курс:</span>
+                            <span class="course__number">190</span>
+                        </div>
+                    </div>
+                    <div class="course__progress">
+                        <div class="course__progress-label">
+                            <span>Заработано учениками:</span>
+                            <span class="course__number">400 000₽</span>
+                        </div>
+                        <div class="course__progress-element">
+                            <progress min="0" max="1000000" value="400000" />
+                        </div>
+                        <div class="course__progress-minmax">
+                            <span>0₽</span>
+                            <span>1 000 000₽</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <section class="work">
             <div class="container">
@@ -129,6 +165,67 @@
             </div>
         </section>
 
+        <section class="program">
+            <div class="container">
+                <div class="program__image">
+                    <img src="./img/program.svg" alt="">
+                </div>
+                <h2 class="program__header">Программа обучения</h2>
+                <p class="program__description">Больше 90% учеников прошли полный курс и смогли собрать свой первый
+                    компьютер</p>
+                <div class="program__content">
+                    <div class="program-line">
+                        <div class="program-line__content">
+                            <h3 class="program-line__title">Неделя №1</h3>
+                            <p class="program-line__descr active">
+                                Красивая часть курса,
+                                которая помогает в успехе
+                            </p>
+                        </div>
+                        <div class="program-line__content">
+                            <h3 class="program-line__title">Неделя №2</h3>
+                            <p class="program-line__descr">
+                                Красивая часть курса,
+                                которая помогает в успехе
+                            </p>
+                        </div>
+                    </div>
+                    <div class="program-line">
+                        <div class="program-line__content">
+                            <h3 class="program-line__title">Неделя №3</h3>
+                            <p class="program-line__descr">
+                                Красивая часть курса,
+                                которая помогает в успехе
+                            </p>
+                        </div>
+                        <div class="program-line__content">
+                            <h3 class="program-line__title">Неделя №4</h3>
+                            <p class="program-line__descr">
+                                Красивая часть курса,
+                                которая помогает в успехе
+                            </p>
+                        </div>
+                    </div>
+                    <div class="program-line">
+                        <div class="program-line__content">
+                            <h3 class="program-line__title">Неделя №5</h3>
+                            <p class="program-line__descr">
+                                Красивая часть курса,
+                                которая помогает в успехе
+                            </p>
+                        </div>
+                        <div class="program-line__content">
+                            <h3 class="program-line__title">Неделя №6</h3>
+                            <p class="program-line__descr">
+                                Красивая часть курса,
+                                которая помогает в успехе
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="command">
             <div class="container">
                 <div class="process-title command-title">
@@ -190,6 +287,28 @@
             </div>
         </section>
     </main>
+
+    <form action="#" class="modal block-center">
+        <div class="modal__inner">
+            <div class="modal__close">
+                <img src="img/cross.svg" alt="">
+            </div>
+            <div class="modal__header">Заявка на сборку ПК</div>
+            <div class="modal__subheader">Мы свяжемся с вами, чтобы обсудить детали заказа</div>
+            <div class="modal__elements block-center-horis">
+                <div class="modal__input">
+                    <input type="text" class="modal__input">
+                </div>
+                <div class="modal__input">
+                    <input type="tel" class="modal__input">
+                </div>
+                <div class="modal__input">
+                    <input type="email" class="modal__input">
+                </div>
+                <button type="button" class="button modal__button">Отправить</button>
+            </div>
+        </div>
+    </form>
 </body>
 
 </html>

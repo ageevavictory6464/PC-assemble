@@ -20,6 +20,14 @@ img {
     flex-shrink: 0;
 }
 
+ul {
+    padding-left: 0;
+}
+
+ul>li {
+    list-style: none;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -48,13 +56,26 @@ h6 {
 }
 
 :root {
+    --text-white-color: #FFFFFF;
     --text-size-medium: 1.6rem;
 }
 
 .button {
     border-radius: 5rem;
     padding: 1rem 3rem;
+    font-size: var(--text-size-medium);
     color: #fff;
+}
+
+.block-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block-center-horis {
+    display: flex;
+    align-items: center;
 }
 
 .header {
@@ -62,20 +83,16 @@ h6 {
     top: 0;
     left: 50%;
     transform: translate(-50%, 0);
+    padding: 4rem 8rem;
     width: 100%;
-    padding: 4rem 11rem 4rem 8rem;
     z-index: 10;
 }
 
-.header-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
+.header-wrap,
 .header-menu {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .nav a:not(:last-child) {
@@ -159,6 +176,100 @@ h6 {
     font-size: 1.6rem;
     line-height: 150%;
     font-weight: bold;
+}
+
+
+
+.course {
+    padding-top: 100px;
+}
+
+.course__wrap {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.course-button__wrap {
+    display: flex;
+    flex-shrink: 0;
+    margin-right: 81px;
+}
+
+.course__button {
+    background: linear-gradient(94.78deg, #DF5950 11.19%, #451046 93.72%);
+}
+
+.course__counter {
+    min-width: 251px;
+    margin-right: 81px;
+}
+
+.course__counter-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.course__counter-line,
+.course__progress-label {
+    color: #FFFFFF40;
+}
+
+.course__progress-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 279px;
+}
+
+.course__number {
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.course__progress {
+    width: 100%;
+}
+
+.course__progress-element {
+    width: 100%;
+}
+
+.course__progress-minmax {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #FFFFFF40;
+}
+
+progress,
+progress[value],
+progress:not([value]) {
+    appearance: none;
+    width: 100%;
+    margin: 5px 0;
+}
+
+progress::-webkit-progress-bar {
+    background: #FFFFFF;
+    height: 6px;
+}
+
+progress::-webkit-progress-value {
+    background: linear-gradient(94.78deg, #DF5950 11.19%, #451046 93.72%);
+    height: 6px;
+}
+
+progress {
+    background: #FFFFFF;
+    height: 6px;
+}
+
+progress::-moz-progress-value {
+    background: linear-gradient(94.78deg, #DF5950 11.19%, #451046 93.72%);
+    height: 6px;
 }
 
 
@@ -265,6 +376,97 @@ h6 {
 }
 
 
+.program {
+    margin-bottom: 200px;
+}
+
+.program__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.program__content::before {
+    content: '';
+    position: absolute;
+    background-image: url('../img/line.png');
+    width: 86px;
+    height: 100%;
+    background-repeat: no-repeat;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.program-line {
+    display: flex;
+    justify-content: space-between;
+    width: 750px;
+}
+
+.program-line__content:nth-child(n) {
+    text-align: right;
+}
+
+.program-line__content:nth-child(2n) {
+    text-align: left;
+    margin-top: 76px;
+}
+
+
+.program__image {
+    margin: 0 auto;
+    width: 90px;
+    margin-bottom: 76px;
+}
+
+.program__header {
+    text-align: center;
+    font-weight: 700;
+    font-size: 4.8rem;
+    line-height: 140%;
+}
+
+.program__description {
+    max-width: 410px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    color: #FFFFFF40;
+    margin: 30px auto 80px auto;
+}
+
+.program-line__content {
+    width: 304px;
+    height: 115px;
+}
+
+.program-line__descr {
+    height: 0;
+    overflow: hidden;
+}
+
+.program-line__descr.active {
+    height: auto;
+    overflow: auto;
+}
+
+.program-line__title {
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    color: #FFFFFF40;
+}
+
+.program-line__descr {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+}
+
+
 .command {
     margin-bottom: 20rem;
 }
@@ -368,4 +570,174 @@ h6 {
 .assembly-item img {
     width: 50%;
     height: 50%;
+}
+
+
+.modal {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 3rem 0;
+    display: none;
+}
+
+.modal__inner {
+    width: 66.3rem;
+    padding: 9rem 9.5rem;
+    background: #2C2C2C;
+    text-align: center;
+}
+
+.modal__header {
+    font-weight: 700;
+    font-size: 4.8rem;
+    line-height: 140%;
+    color: var(--text-white-color);
+    margin-bottom: 1rem;
+}
+
+.modal__subheader {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 160%;
+    color: var(--text-white-color);
+    opacity: 0.5;
+    margin-bottom: 2.8rem;
+}
+
+.modal__input {
+    width: 100%;
+    height: 4.4rem;
+    background-color: grey;
+    border-radius: 5rem;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 160%;
+    color: var(--text-white-color);
+    opacity: 0.8;
+}
+
+.modal__input input {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.modal__input:not(:last-child) {
+    margin-bottom: 1.6rem;
+}
+
+.modal__elements {
+    width: 45rem;
+    margin: 0 auto;
+    margin-bottom: 3.2rem;
+    flex-direction: column;
+}
+
+.modal__button {
+    background: linear-gradient(94.78deg, #DF5950 11.19%, #451046 93.72%);
+}
+
+.active {
+    display: flex;
+}
+
+.noscroll {
+    overflow: hidden !important;
+    height: 100% !important;
+}
+
+/*сетка*/
+@media (max-width: 108em) {
+    html {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 105em) {
+    html {
+        font-size: 8.75px;
+    }
+}
+
+@media (max-width: 91.5em) {
+    html {
+        font-size: 7.9px;
+    }
+}
+
+@media (max-width: 91em) {
+    html {
+        font-size: 8.4px;
+    }
+}
+
+@media (max-width: 90em) {
+    html {
+        font-size: 7.9px;
+    }
+}
+
+@media (max-width: 80em) {
+    html {
+        font-size: 7.2px
+    }
+}
+
+@media (max-width: 72em) {
+    html {
+        font-size: 6.5px;
+    }
+}
+
+@media (max-width: 64em) {
+    html {
+        font-size: 5.5px;
+    }
+}
+
+@media (max-width: 48em) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 44em) {
+    html {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 38em) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 34em) {
+    html {
+        font-size: 7px;
+    }
+}
+
+@media (max-width: 30em) {
+    html {
+        font-size: 6px;
+    }
+}
+
+@media (max-width: 26em) {
+    html {
+        font-size: 4.5px;
+    }
+}
+
+@media (max-width: 21em) {
+    html {
+        font-size: 4.4px;
+    }
 }
