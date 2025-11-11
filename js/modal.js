@@ -6,5 +6,8 @@ modalBtn.addEventListener('click', () => {
 })
 
 modal.addEventListener('click', (event) => {
-    console.log('modal')
+    const modalContent = event.target.closest('.modal__inner')
+    if (!modalContent) {
+        modal.style.display = ''
+    }
 })
