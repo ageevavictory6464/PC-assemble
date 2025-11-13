@@ -1,23 +1,41 @@
 const sendForm = () => {
-    const form = document.querySelector('.modal')
+    const form = document.querySelector('.modal');
 
     form.addEventListener('submit', (event) => {
-        event.preventDefault()
+        event.preventDefault();
 
-        const text = form.querySelector('input[type=text]')
-        const tel = form.querySelector('input[type=tel]')
-        const email = form.querySelector('input[type=email]')
+        const formData = new FormData(form);
 
-        const sendObj = {
-            name: text.value,
-            phone: tel.value,
-            email: email.value,
+        const sendObj = {};
+        for (let [key, value] of formData.entries()) {
+            sendObj[key] = value;
         }
 
-        fetch('https://jsonplaceholder.typicode.com/todos/1')
-            .then(response => response.json())
-            .then(json => console.log(json))
-
-    })
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify(sendObj),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`Ошибка HTTP: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((json) => {
+                console.log('Успешный ответ:', json);
+                alert('Данные успешно отправлены!');
+            })
+            .catch((error) => {
+                console.error('Ошибка:', error);
+                alert('Произошла ошибка при отправке данных. Пожалуйста, попробуйте еще раз.');
+            })
+            .finally(() => {
+                form.reset();
+                console.log('Форма очищена');
+            });
+    });
 }
 sendForm()
